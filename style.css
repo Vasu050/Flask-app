@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+h1 {
+    color: #333333;
+    text-align: center;
+}
+
+/* styles.css */
+
+/* General styles for the table */
+table {
+    width: 80%; /* Set the width of the table */
+    margin: 20px auto; /* Center the table on the page */
+    border-collapse: collapse; /* Collapse borders to remove space between cells */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    background-color:#f2f2f2 ;
+}
+
+/* Styles for table header */
+th {
+     /* Green background */
+    color: black; /* White text */
+    padding: 10px; /* Add padding */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Light gray border for header */
+    background-color: white;
+}
+
+/* Styles for table cells */
+td {
+    padding: 10px; /* Add padding */
+    border: 1px solid white; /* Light gray border */
+}
+
+
+tbody tr:hover {
+    background-color: #ddd; /* Dark gray on hover */
+}
+.add {
+text-align: center;
+padding: 10px;
+}

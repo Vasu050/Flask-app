@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <title> Task Master</title>
+</head>
+<body>
+    <div class ="content">
+        <h1>Task Master</h1>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td>
+                    <form action="/update/{{ task.id }}" method="POST" style="display: inline;">
+                        <input type="text" name="task_content" value="{{ task.content }}" style="width: 100px; border: none; background: none; color: inherit;">
+                        
+                    </form>
+                </td>
+                <td>{{ task.date_created.date().strftime('%d-%m-%Y') }}</td>
+                <td>
+                    <form action="/Delete/{{ task.id }}" method="POST" style="display: inline; ">
+                        <input type="submit" value="Delete">  
+                    </form>
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        <div class="add">
+            <form action="/" method="POST">
+                <input type="text" id="addtext" name="addtext" placeholder="add text">
+                <input type="submit" value="Add Text">
+              </form>
+        </div>
+    </div>
+</body>
+</html>
